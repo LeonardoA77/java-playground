@@ -4,6 +4,7 @@
   "description": "UI for the Rust playground",
   "main": "index.js",
   "dependencies": {
+    "@emotion/react": "^11.11.1",
     "@floating-ui/react": "^0.24.0",
     "@reduxjs/toolkit": "^1.8.5",
     "ace-builds": "^1.23.0",

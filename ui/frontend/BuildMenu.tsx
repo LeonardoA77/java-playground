@@ -1,4 +1,6 @@
+/** @jsxImportSource @emotion/react */
 import React, { useCallback } from 'react';
+import { css } from '@emotion/react';
 
 import * as actions from './actions';
 import { useAppDispatch } from './configureStore';
@@ -8,6 +10,12 @@ import MenuGroup from './MenuGroup';
 
 import styles from './BuildMenu.module.css';
 
+const the_button = css`
+  background-color: #20c997
+  &:hover: {
+    color: #198754;
+  }
+`
 interface BuildMenuProps {
   close: () => void;
 }
@@ -30,10 +38,10 @@ const BuildMenu: React.FC<BuildMenuProps> = props => {
 
   return (
     <MenuGroup title="Run Now">
-      <ButtonMenuItem name="Run" onClick={execute}>
+      <ButtonMenuItem css={the_button} name="Run" onClick={execute}>
           Build and run the code, showing the output. Equivalent to <Code>java Main.java</Code>.
       </ButtonMenuItem>
-      <ButtonMenuItem name="Build" onClick={compile}>
+      <ButtonMenuItem css={the_button} name="Build" onClick={compile}>
           Build the code without running it. Equivalent to <Code>javac Main.java</Code>.
       </ButtonMenuItem>
     </MenuGroup>
